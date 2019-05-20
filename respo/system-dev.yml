@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  rabbitmq:
+    host: 116.62.190.216
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        myOutput:
+          destination: wdtest_
+          #content-type: application/json
+        myInput:
+          destination: wdtest_
+          #content-type: application/json
+          group: average
+        myOutput2:
+          destination: wdtest_2
+          #content-type: application/json
+        myInput2:
+          destination: wdtest_2
+          #content-type: application/json
+          group: average
