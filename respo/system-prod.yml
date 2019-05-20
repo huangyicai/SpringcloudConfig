@@ -22,6 +22,4 @@ spring:
           #content-type: application/json
           group: average
 
-env: this is dev
-
-
+env: this is prod
