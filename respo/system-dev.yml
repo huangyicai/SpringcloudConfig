@@ -21,7 +21,11 @@ spring:
           destination: wdtest_2
           #content-type: application/json
           group: average
-
+swagger:
+  basePackage: com.live.system.controller
+  title: 测试模块文档
+  description: 测试模块文档
+  version: 1.0
 env: this is dev
 
 
