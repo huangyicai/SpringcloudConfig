@@ -1,9 +1,9 @@
+swagger:
+  basePackage: com.live.system.controller
+  title: 系统模块文档
+  description: 系统模块文档
+  version: 1.0
 spring:
-  rabbitmq:
-    host: 116.62.190.216
-    port: 5672
-    username: guest
-    password: guest
   cloud:
     stream:
       bindings:
@@ -21,5 +21,3 @@ spring:
           destination: wdtest_2
           #content-type: application/json
           group: average
-
-env: this is prod
