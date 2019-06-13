@@ -21,3 +21,9 @@ spring:
           destination: wdtest_2
           #content-type: application/json
           group: average
+security:
+  oauth2:
+    resource:
+      id: system
+      user-info-uri: http://localhost:8888/auth/api/member
+      prefer-token-info: false
