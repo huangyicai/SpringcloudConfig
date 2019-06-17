@@ -1,36 +1,43 @@
 spring:
   application:
     name: gateway
-  cloud:
-    gateway:
-      locator:
-        enabled: true
-      routes:
-      #系统模块
-      - id: system
-        uri: lb://system
-        predicates:
-        - Path=/system/**
-        filters:
-        - SwaggerHeaderFilter
-        - StripPrefix=1
-      #账户模块
-      - id: account
-        uri: lb://account
-        predicates:
-        - Path=/account/**
-        filters:
-        - SwaggerHeaderFilter
-        - StripPrefix=1
-      #权限模块
-      - id: auth
-        uri: lb://auth
-        predicates:
-        - Path=/auth/**
-        filters:
-        - SwaggerHeaderFilter
-        - StripPrefix=1
-
+#  cloud:
+#    gateway:
+#      locator:
+#        enabled: true
+#      routes:
+#      #系统模块
+#      - id: system
+#        uri: lb://system
+#        predicates:
+#        - Path=/system/**
+#        filters:
+#        - SwaggerHeaderFilter
+#        - StripPrefix=1
+#      #账户模块
+#      - id: account
+#        uri: lb://account
+#        predicates:
+#        - Path=/account/**
+#        filters:
+#        - SwaggerHeaderFilter
+#        - StripPrefix=1
+#      #权限模块
+#      - id: auth
+#        uri: lb://auth
+#        predicates:
+#        - Path=/auth/**
+#        filters:
+#        - SwaggerHeaderFilter
+#        - StripPrefix=1
+zuul:
+  routes:
+    system:
+      path: /system/** # 配置路由规则
+    auth:
+      path: /auth/** # 配置路由规则
+    account:
+      path: /account/** # 配置路由规则
 #---------------------OAuth2---------------------
 security:
   oauth2:
