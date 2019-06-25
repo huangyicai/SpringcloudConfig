@@ -25,5 +25,5 @@ security:
   oauth2:
     resource:
       id: system
-      user-info-uri: http://localhost:8888/auth/api/member
+      user-info-uri: http://localhost:3333/auth/api/member
       prefer-token-info: false
