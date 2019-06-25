@@ -34,10 +34,25 @@ zuul:
   routes:
     system:
       path: /system/** # 配置路由规则
+      serviceId: system
+      sensitiveHeaders: "*"
     auth:
       path: /auth/** # 配置路由规则
+      serviceId: auth
+      sensitiveHeaders: "*"
     account:
       path: /account/** # 配置路由规则
+      serviceId: account
+      sensitiveHeaders: "*"
+  retryable: false
+  ignored-services: "*"
+  ribbon:
+    eager-load:
+      enabled: true
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+  add-proxy-headers: true
 #---------------------OAuth2---------------------
 security:
   oauth2:
